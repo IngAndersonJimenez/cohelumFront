@@ -1,0 +1,15 @@
+{
+    "equipo": [
+        {
+            "nombre": "CateMar",
+            "titulo_1": "CateMar",
+            "subtitulo_1": "CateMar",
+            "id": 1,
+            "image": "CateMar",
+            "url_l": "CateMar",
+            "url_f": "CateMar",
+            "url_in": "CateMar",
+            "descripcion": "descripcion"
+        }
+    ]
+}

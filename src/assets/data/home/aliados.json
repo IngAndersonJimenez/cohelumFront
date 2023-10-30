@@ -1,0 +1,11 @@
+{
+    "aliados": [
+        {
+            "nombre": "CateMar",
+            "id": 1,
+            "logo": "CateMar",
+            "url": "CateMar",
+            "descripcion": "descripcion"
+        }
+    ]
+}

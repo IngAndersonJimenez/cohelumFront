@@ -15,7 +15,7 @@ import {Inventory} from "../../interface/inventory";
 export class LoginComponent implements OnInit{
 
   inventory: Inventory | undefined;
-  login: Array<RequestLogin> = [];
+  login: RequestLogin = {emailUser:'prueba@gmail.com', password :'1010'}
   public loginForm!: FormGroup;
 
   constructor(public loginService: LoginService, private formBuilder: FormBuilder, private router:Router) {

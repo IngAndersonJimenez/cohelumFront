@@ -1,4 +1,4 @@
 export interface RequestLogin{
-    email : String;
+    emailUser : String;
     password : String;
 }

@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../../services/login.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {RequestLogin} from "../../interface/RequestLogin";
 import {Router} from "@angular/router";
-import {Inventory} from "../../interface/inventory";
-
+import {NotificationService} from "../../../notifications/notification.service";
 
 
 @Component({
@@ -14,11 +12,10 @@ import {Inventory} from "../../interface/inventory";
 })
 export class LoginComponent implements OnInit{
 
-  inventory: Inventory | undefined;
-  login: RequestLogin = {emailUser:'prueba@gmail.com', password :'1010'}
+  //login: RequestLogin = {emailUser:'prueba@gmail.com', password :'1010'}
   public loginForm!: FormGroup;
 
-  constructor(public loginService: LoginService, private formBuilder: FormBuilder, private router:Router) {
+  constructor(public loginService: LoginService, private formBuilder: FormBuilder, private router:Router, private notificationService:NotificationService) {
   }
 
   ngOnInit(): void {
@@ -27,39 +24,19 @@ export class LoginComponent implements OnInit{
 
   private buildForm() {
     this.loginForm = this.formBuilder.group({
-      email: ['', new FormControl('', [Validators.required, Validators.email])],
+      emailUser: ['', new FormControl('', [Validators.required, Validators.email])],
       password: ['', Validators.required]
     });
   }
 
-/*  login() {
+  login() {
     if (this.loginForm.valid) {
-      this.loginService.login(this.loginForm.value).subscribe(data => {});
+      console.log(this.loginForm)
+      this.loginService.login(this.loginForm.value).subscribe(data => console.log(data),
+        err => this.notificationService.showError("Login fallido","Bienvenido"))
+
+  }
+
     }
-  }*/
-
-  loginUser(){
-    this.loginService.loginUser(this.login).subscribe(
-        response =>{
-          this.router.navigate(['/home'])
-        }
-
-    )
-  }
-  obtenerInventario(id: number) {
-    this.loginService.getInventory(id).subscribe(
-      (data: Inventory) => {
-        // Maneja los datos de inventario obtenidos exitosamente, por ejemplo, almacénalos en una variable.
-        console.log('Inventario obtenido:', data);
-      }
-    );
-  }
-
-  getInventory() {
-    this.loginService.getInventoryById(1).subscribe((data: Inventory) => {
-      this.inventory = data;
-    });
-  }
-
 
 }

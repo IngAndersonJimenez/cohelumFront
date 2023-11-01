@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { GlobalModule } from './components/global/global.module';
-
+import { ToastrModule } from 'ngx-toastr';
+import {SharedModule} from "./shared/shared.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,11 @@ import { GlobalModule } from './components/global/global.module';
     HttpClientModule,
     AppRoutingModule,
     GlobalModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -31,7 +31,7 @@ export class LoginService {
           if (result != null ){
             console.log("Llego")
             this.notificationService.showSuccess("Login exitoso","Bienvenido")
-            this.router.navigate(['/home'])
+            this.router.navigate(['/home/products'])
           }
         })
       )

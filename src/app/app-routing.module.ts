@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: 'admin',
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./web-site/web-site.module').then(m => m.WebSiteModule),
+  },
+  {
+    path: 'authenticated',
+    loadChildren: () =>
+      import('./authenticated/authenticated.module').then((m) => m.AuthenticatedModule)
   },
   {
     path: '**',

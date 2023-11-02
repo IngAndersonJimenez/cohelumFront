@@ -1,0 +1,15 @@
+{
+    "categorias": [
+        {
+            "nombre": "CateMar",
+            "titulo_1": "CateMar",
+            "subtitulo_1": "CateMar",
+            "titulo_2": "CateMar",
+            "subtitulo_2": "CateMar",
+            "id": 1,
+            "image": "CateMar",
+            "url": "CateMar",
+            "descripcion": "descripcion"
+        }
+    ]
+}

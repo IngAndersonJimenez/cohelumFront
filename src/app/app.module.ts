@@ -8,9 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { GlobalModule } from './components/global/global.module';
 import { ToastrModule } from 'ngx-toastr';
 import {SharedModule} from "./shared/shared.module";
+import { DashboardComponent } from './authenticated/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
